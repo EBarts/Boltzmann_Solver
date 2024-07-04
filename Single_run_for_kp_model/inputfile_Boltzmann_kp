@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --time=6:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --job-name=Boltzmann1sg_kp
+#SBATCH --output=Boltzmann1sg_kp.out
+#SBATCH --mem=240000
+
+module purge
+module load MATLAB/2022b-r5
+
+matlab -nodisplay -nosplash -nodesktop < single_EF_run_kp.m;exit
